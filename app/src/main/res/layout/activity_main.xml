@@ -1,18 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    android:orientation="vertical"
+    android:gravity="center_horizontal|center_vertical"
+    android:layout_gravity="center_horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.dk.agriculture.MainActivity">
 
-    <TextView
+    <ImageView
+        android:contentDescription="logo"
+        android:src="@mipmap/ic_launcher_round"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content" />
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="30dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/loginPhone"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:layout_alignEnd="@+id/loginNew"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:hint="Enter Phone Number"
+            android:padding="10dp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Login"
+        android:id="@+id/loginButton"/>
 
-</android.support.constraint.ConstraintLayout>
+
+</LinearLayout>
