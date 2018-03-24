@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "883017163826-87vpm8f98pg1sbjunea2u01gmgmivbk5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dk.agriculture",
+            "certificate_hash": "45e1a9f810c4d5ce0512aadf0fd5c89a7450f73c"
+          }
+        },
+        {
           "client_id": "883017163826-2kho2ff9csspet3g5mbdudqmg5vle71l.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
