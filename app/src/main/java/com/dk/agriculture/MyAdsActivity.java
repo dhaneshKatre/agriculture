@@ -101,7 +101,7 @@ public class MyAdsActivity extends AppCompatActivity {
         }
     }
 
-    public void confromation(AddModel addModel)
+    public void confromation(final AddModel addModel)
     {
         final AlertDialog.Builder dialogbuilder = new AlertDialog.Builder(this);
         LayoutInflater layoutInflater = getLayoutInflater();
@@ -110,9 +110,9 @@ public class MyAdsActivity extends AppCompatActivity {
         dialogbuilder.setTitle("EDIT AD");
         dialogbuilder.setMessage("Are You Sure?");
         Button confirm = (Button) conformationview.findViewById(R.id.confirm);
-        EditText maxdays = conformationview.findViewById(R.id.maxdays);
-        EditText priceperday = conformationview.findViewById(R.id.priceperday);
-        Spinner equipments = conformationview.findViewById(R.id.equipments);
+        final EditText maxdays = conformationview.findViewById(R.id.maxdays);
+        final EditText priceperday = conformationview.findViewById(R.id.priceperday);
+        final Spinner equipments = conformationview.findViewById(R.id.equipments);
         ArrayAdapter<String> mAdapterComponent= new ArrayAdapter<String>(MyAdsActivity.this, android.R.layout.simple_spinner_item,getResources().getStringArray(R.array.equipments));
         mAdapterComponent.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         equipments.setAdapter(mAdapterComponent);
@@ -132,7 +132,13 @@ public class MyAdsActivity extends AppCompatActivity {
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                mDatabase.child("farmer").child(db.getAllValues().get("phone")).child("myAds").child(addModel.getId()).child("equipment").setValue(equipments.getSelectedItem().toString());
+                mDatabase.child("farmer").child(db.getAllValues().get("phone")).child("myAds").child(addModel.getId()).child("maxdays").setValue(maxdays.getText().toString());
+                mDatabase.child("farmer").child(db.getAllValues().get("phone")).child("myAds").child(addModel.getId()).child("priceperday").setValue(priceperday.getText().toString());
+                mDatabase.child("market").child(addModel.getEquipment()).child(addModel.getId()).child("equipment").setValue(equipments.getSelectedItem().toString());
+                mDatabase.child("market").child(addModel.getEquipment()).child(addModel.getId()).child("maxdays").setValue(maxdays.getText().toString());
+                mDatabase.child("market").child(addModel.getEquipment()).child(addModel.getId()).child("priceperday").setValue(priceperday.getText().toString());
+                conformationdialog.dismiss();
             }
         });
     }
