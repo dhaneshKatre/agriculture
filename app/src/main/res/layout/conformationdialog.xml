@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_height="match_parent">
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipments"
+        ></Spinner>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/maxdays"
+        android:hint="MAX DAYS"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/priceperday"
+        android:hint="PRICE PER DAY"
+        />
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <Button
+           android:id="@+id/confirm"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:text="CONFIRM"
+           android:background="@color/colorPrimary"
+           android:textColor="@color/tw__composer_white"/>
+       <Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/cancel"
+           android:layout_weight="1"
+           android:text="CANCEL"
+           android:background="@color/tw__composer_white"
+           android:textColor="@color/colorPrimary"
+           />
+   </LinearLayout>
+
+
+</LinearLayout>

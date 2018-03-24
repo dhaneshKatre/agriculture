@@ -7,6 +7,9 @@ package com.dk.agriculture;
 public class AddModel {
      public String equipment,equipmentdesc, priceperday, maxdays, id;
 
+    public AddModel() {
+    }
+
     public AddModel(String equipment, String equipmentdesc, String priceperday, String maxdays, String id) {
         this.equipment = equipment;
         this.equipmentdesc = equipmentdesc;
