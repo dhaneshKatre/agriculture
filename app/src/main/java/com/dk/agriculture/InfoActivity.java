@@ -46,7 +46,7 @@ public class InfoActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if(task.isSuccessful()) {
-                                    startActivity(new Intent(InfoActivity.this, Dashboard.class));
+                                    startActivity(new Intent(InfoActivity.this, DashboardActivity.class));
                                     finish();
                                 }
                                 else

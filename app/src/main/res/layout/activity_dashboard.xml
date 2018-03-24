@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dk.agriculture.Dashboard">
+    tools:context=".DashboardActivity">
 
-</LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Place an Ad"
+        android:id="@+id/placeAd"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/placeAd"
+        android:text="My Ads"
+        android:id="@+id/myAd"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/myAd"
+        android:text="Rent an equipment"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rent"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/soil"
+        android:text="Soil Analysis"
+        />
+
+</RelativeLayout>

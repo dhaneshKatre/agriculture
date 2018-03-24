@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
                 String phon = phone.getText().toString();
                 if(db.isUserExist(phon)){
                     Toast.makeText(MainActivity.this, "User Exists!", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(MainActivity.this, Dashboard.class));
+                    startActivity(new Intent(MainActivity.this, DashboardActivity.class));
                     finish();
                 }
                 else {

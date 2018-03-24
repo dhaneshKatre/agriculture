@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Agriculture</string>
+    <string-array name="equipments">
+        <item>--Select Equpiments--</item>
+        <item>Tractor</item>
+        <item>Grain Saperator</item>
+        <item>Water Pump</item>
+        <item>Hand Tractor</item>
+        <item>Grain Dryer</item>
+    </string-array>
 </resources>
