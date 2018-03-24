@@ -23,11 +23,11 @@
         android:textSize="22sp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_alignBottom="@+id/equipment"
-        android:layout_toEndOf="@+id/equipment"
         android:layout_marginStart="8dp"
         android:textStyle="bold"
-        android:textColor="@color/colorPrimary"/>
+        android:textColor="@color/colorPrimary"
+        android:layout_alignBottom="@+id/equipment"
+        android:layout_toEndOf="@+id/equipment"/>
     <TextView
         android:id="@+id/equipmentdesc"
         android:layout_width="wrap_content"
@@ -47,9 +47,9 @@
         android:textSize="16sp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:layout_alignBottom="@+id/equipmentdesc"
-        android:layout_toEndOf="@+id/equipmentdesc"
-        android:layout_marginStart="8dp"/>
+        android:layout_toEndOf="@+id/equipmentdesc"/>
     <TextView
         android:id="@+id/maxdays"
         android:layout_width="wrap_content"
