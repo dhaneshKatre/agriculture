@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".DashboardActivity">
-
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -13,6 +20,7 @@
         android:id="@+id/placeAd"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
+        android:layout_below="@+id/toolbar"
         />
     <Button
         android:layout_width="wrap_content"
@@ -39,5 +47,12 @@
         android:id="@+id/soil"
         android:text="Soil Analysis"
         />
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/soil"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/cropman"
+        android:text="Crop Management"
+        />
 </RelativeLayout>

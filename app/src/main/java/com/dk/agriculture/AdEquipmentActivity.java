@@ -48,7 +48,7 @@ public class AdEquipmentActivity extends AppCompatActivity {
                 AddModel addModel = new AddModel(equipments.getSelectedItem().toString(),equipmentdesc.getText().toString(),priceperday.getText().toString(),maxdays.getText().toString(),key);
                 Toast.makeText(AdEquipmentActivity.this, FirebaseDatabase.getInstance().toString(), Toast.LENGTH_SHORT).show();
                 equipmentbase.child(key).setValue(addModel);
-                MarketAddModel marketAddModel = new MarketAddModel(equipments.getSelectedItem().toString(),"demoFarmer",equipmentdesc.getText().toString()
+                MarketAddModel marketAddModel = new MarketAddModel(equipments.getSelectedItem().toString(),db.getAllValues().get("name"),equipmentdesc.getText().toString()
                         ,priceperday.getText().toString(),maxdays.getText().toString(),db.getAllValues().get("location"),db.getAllValues().get("phone"),latitude.toString() ,longitude.toString(),"0",key);
                 marketbase.child(equipments.getSelectedItem().toString()).child(key).setValue(marketAddModel);
                 finish();

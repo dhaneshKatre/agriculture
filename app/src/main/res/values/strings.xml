@@ -8,4 +8,16 @@
         <item>Hand Tractor</item>
         <item>Grain Dryer</item>
     </string-array>
+    <string-array name="stables">
+        <item>--Select Stable--</item>
+        <item>Stable 1</item>
+        <item>Stable 2</item>
+    </string-array>
+    <string name="btn_en">English</string>
+    <string name="btn_hi">Hindi</string>
+    <string name="place_an_ad">Place an Ad</string>
+    <string name="my_ads">My Ads</string>
+    <string name="rent_an_equipment">Rent an Equipment</string>
+    <string name="soil_analysis">Soil Analysis</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

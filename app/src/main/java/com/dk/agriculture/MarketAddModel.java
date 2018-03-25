@@ -7,6 +7,10 @@ package com.dk.agriculture;
 public class MarketAddModel {
     public String equipment,equipmentdesc, priceperday, maxdays,  renternumber, latitude,location, longitude,rentername, distance, id;
 
+    public MarketAddModel () {
+
+    }
+
     public MarketAddModel(String equipment,String rentername,  String equipmentdesc, String priceperday, String maxdays, String location, String renternumber, String latitude, String longitude, String distance, String id) {
         this.equipment = equipment;
         this.equipmentdesc = equipmentdesc;

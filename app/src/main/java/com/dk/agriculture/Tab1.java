@@ -1,17 +1,21 @@
 package com.dk.agriculture;
 
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.AdapterView;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class SoilActivity extends AppCompatActivity {
+/**
+ * Created by shaik_000 on 25-03-2018.
+ */
+
+public class Tab1 extends Fragment {
 
     private double currentLat = 20.606,currentLon = 75.58;
     private String type ;
@@ -23,11 +27,17 @@ public class SoilActivity extends AppCompatActivity {
     private ArrayList<String> red = new ArrayList<String>();
     private ArrayList<String> alluvial = new ArrayList<String>();
     private ArrayList<String> arid = new ArrayList<String>();
+
+
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_soil);
-        cropListView = findViewById(R.id.cropList);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        View  v = inflater.inflate(R.layout.tab1,container,false);
+        perform(v);
+        return v;
+    }
+    public void perform(View v) {
+        cropListView = v.findViewById(R.id.cropList);
 
         black.add("Jowar");
         black.add("Sugarcane");
@@ -54,43 +64,29 @@ public class SoilActivity extends AppCompatActivity {
         switch(cropType){
 
             case "Forest & Mountains" :
-                mAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,forest);
+                mAdapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,forest);
                 cropListView.setAdapter(mAdapter);
                 break;
             case "Alluvial" :
-                mAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,alluvial);
+                mAdapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,alluvial);
                 cropListView.setAdapter(mAdapter);
                 break;
             case "Red and Yellow" :
-                mAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,red);
+                mAdapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,red);
                 cropListView.setAdapter(mAdapter);
                 break;
             case "Black" :
-                mAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,black);
+                mAdapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,black);
                 cropListView.setAdapter(mAdapter);
                 break;
             case "Arid" :
-                mAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,arid);
+                mAdapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,arid);
                 cropListView.setAdapter(mAdapter);
                 break;
         }
 
 
-
-        cropListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String cropSelect = (String) adapterView.getItemAtPosition(i);
-
-                Intent videoIntent = new Intent(SoilActivity.this,VideoActivity.class);
-                videoIntent.putExtra("crop",cropSelect);
-                startActivity(videoIntent);
-
-            }
-        });
-
-
-
+        cropListView.setOnItemClickListener(TabActivity.mCropListener);
     }
 
     private String checkSoilType(double lat, double lon) {
